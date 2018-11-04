@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+<div class="container">
+  <div class="row">
+    <!-- Column-1 -->
+    <p>Number of filtered items: {{records.length}}</p>
+    <div class="column" ng-repeat="className in records" ng-show="className.length > 0" ng-class="{
+                     'col-xs-12': {{records.length}} == 1,
+                     'col-xs-6': {{records.length}} == 2,
+                     'col-xs-4': {{records.length}} == 3,
+                     'col-xs-3': {{records.length}} == 4,
+                     'col-xs-2': {{records.length}} == 5,
+                     }">
+        {{className}}
+    </div>   
+  </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
